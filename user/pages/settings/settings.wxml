@@ -1,0 +1,34 @@
+<form bindsubmit="setting_formSubmit">
+  <view class="useritem">
+    <label>当前学习书目：</label>
+    <picker bindchange="pickerBook" value="{{currentBidIndex}}" range="{{books2}}" range-key="{{'Name'}}">
+      <view class="picker section_input">
+        <text> {{books2[currentBidIndex].Name}} </text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="useritem ">
+    <label>每次学习数量：</label>
+    <input class="section_input" type="text" name="limit" value="{{currentLimit}}" placeholder="请输入" />
+  </view>
+
+  <view class="useritem">
+    <label>优先学新加词条</label>
+    <switch class="section_input" color="#007aff" checked="{{LIFO}}" bindchange="changeSwitch" />
+  </view>
+
+  <view class="useritem ">
+    <label>浏览词条数：</label>
+    <input class="section_input" type="text" name="limit2" value="{{currentLimit2}}" placeholder="请输入" />
+  </view>
+
+  <view class="section">
+    <image class="book__img" mode="aspectFit" src="{{books2[currentBidIndex].filename}}" data-src="{{books2[currentBidIndex].filename}}" bindtap="previewImage" />
+  </view>
+
+  <button type="primary" class="btn" formType="submit">确定</button>
+  <button class="btn" bindtap="resetBookRecitals">重背此书</button>
+  <button class="btn" bindtap="resetCoreData">再来一组</button>
+  <button class="btn" bindtap="resetAllData">重置数据</button>
+</form>

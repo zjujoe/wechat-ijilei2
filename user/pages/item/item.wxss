@@ -1,0 +1,56 @@
+.application-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkinitem {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  padding-left: 20rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  border-bottom: 1rpx solid #eee;
+}
+
+.checkinitem:nth-child(even) {
+  background: #f9f9e6;
+}
+
+.checkinitem:nth-child(odd) {
+  background: #e6f3f9;
+}
+
+.section_col {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  border-bottom: 2rpx solid #eee;
+}
+
+.section_name {
+  width: 240rpx;
+}
+
+.btn_small {
+  width: 120rpx;
+  height: 60rpx;
+}
+
+

@@ -1,0 +1,48 @@
+<form bindsubmit="book_formSubmit" bindreset="book_formReset">
+
+  <view class="useritem ">
+    <label>书名:</label>
+    <input class="section_input" type="text" name="name" value="{{book.Name}}" placeholder="请输入" />
+  </view>
+
+  <view class="useritem ">
+    <label>词条:</label>
+    <input class="section_input" type="text" name="items" value="{{book.Items}}" disabled="true" />
+  </view>
+
+  <view class="useritem ">
+    <label>状态:</label>
+
+    <picker bindchange="bindStatusChange" value="{{statusIndex}}" range="{{bookStatus}}">
+      <view class="picker section_input"> {{bookStatus[statusIndex]}} </view>
+    </picker>
+  </view>
+
+  <view class="useritem useritem2">
+    <label>描述:</label>
+    <textarea class="section_input2" name="description" value="{{book.Description}}" maxlength="200" placeholder="最多可输入 4095 个字符">
+    </textarea>
+  </view>
+
+  <view class="section">
+    <view class="uploader__bd">
+      <view class="uploader__files">
+        <view class="uploader__file">
+          <image class="uploader__img" mode="aspectFit" src="{{bookphoto}}" data-src="{{bookphoto}}" bindtap="previewImage" />
+        </view>
+      </view>
+      <view class="uploader__input-box">
+        <view class="uploader__input" bindtap="chooseImage_book"></view>
+      </view>
+    </view>
+    <view class="section_pic">
+      <view style="flex:1" />
+      <button type="primary" size="mini" formType="submit">更新</button>
+    </view>
+    <view class="section_pic">
+      <view style="flex:1" />
+      <button type="warn" size="mini" formType="reset">删除</button>
+    </view>
+  </view>
+
+</form>

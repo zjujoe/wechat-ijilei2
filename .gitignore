@@ -1,0 +1,8 @@
+db/jeedev-api3
+db/lastupdate.tmp
+db/nohup.out
+db/routers/commentsRouter*controllers.go
+db/sql/trigger_examples.txt
+db/static
+db/swagger/
+.DS_Store

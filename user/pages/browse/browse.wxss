@@ -1,0 +1,136 @@
+.application-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sport-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.sport-pic {
+  width: 200rpx;
+  height: 150rpx;
+  margin: 12rpx;
+}
+
+.checkinitem {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  padding-left: 20rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  border-bottom: 1rpx solid #eee;
+}
+
+.checkinitem:nth-child(even) {
+  background: #f9f9e6;
+}
+
+.checkinitem:nth-child(odd) {
+  background: #e6f3f9;
+}
+
+.punchitem {
+  padding: 10px 15px;
+  border-bottom: 2rpx solid #eee;
+}
+
+.punchitem_title {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+}
+
+.punchitem_btn {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding-top: 4rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+}
+
+.section_col {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 4rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  border-bottom: 2rpx solid #eee;
+}
+
+.section_pic {
+  padding-bottom: 10rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #eee;
+}
+
+.section_name {
+  width: 240rpx;
+}
+
+.sports {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx;
+  border-top: 2rpx solid #eee;
+}
+
+.sports_logo {
+  width: 180rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border: 1px solid white;
+}
+
+.sports_details {
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.btn_small {
+  width: 120rpx;
+  height: 60rpx;
+}

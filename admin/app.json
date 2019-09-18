@@ -1,0 +1,44 @@
+{
+  "resizable": true,
+  "pages": [
+    "pages/index/index",
+    "pages/itemadmin/itemadmin",
+    "pages/bookadmin/bookadmin",
+    "pages/register/register",
+    "pages/itemdetail/itemdetail",
+    "pages/book/book"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1f1f27",
+    "navigationBarTitleText": "WeChataaa2",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a1a6af",
+    "backgroundColor": "#1f1f27",
+    "selectedColor": "#52d2a0",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/images/tabbar_icon_personnal_selected.png",
+        "iconPath": "images/tabbar_icon_personnal_normal.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/images/tabbar_icon_elective_selected.png",
+        "iconPath": "images/tabbar_icon_elective_normal.png",
+        "pagePath": "pages/itemadmin/itemadmin",
+        "text": "词条管理"
+      },
+      {
+        "selectedIconPath": "/images/tabbar_icon_course_selected.png",
+        "iconPath": "images/tabbar_icon_course_normal.png",
+        "pagePath": "pages/bookadmin/bookadmin",
+        "text": "书目管理"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

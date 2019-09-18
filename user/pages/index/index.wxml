@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像及昵称 </button>
+    <block wx:else>
+      <image class="userinfo-bg" src="/images/mine.jpg"></image>
+      <image bindtap="punchlist" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <block wx:if="{{punchsummary.Succ}}">
+        <text class="userinfo-rank">连续打卡 {{punchsummary.Succ}} 天, 累计 {{punchsummary.Accu}} 天</text>
+      </block>
+    </block>
+  </view>
+
+  <view class="section">
+    <block wx:if="{{limit>0}}">
+      <image class="book__img" mode="aspectFit" src="{{book2.filename}}" data-src="{{book2.filename}}" bindtap="previewImage" />
+      <label>{{book2.Name}}(状态：{{book2.Start}} {{book2.Middle}} {{book2.Finished}} / {{book2.Items}} 每次：{{limit}}）</label>
+    </block>
+  </view>
+
+  <button class="btn" type="primary" bindtap="study">进入学习</button>
+  <view class="section" bindtap="changeMotto">
+    <label>{{mottos[mottosi*2]}}</label>
+    <text>\n{{mottos[mottosi*2+1]}}</text>
+  </view>
+</view>

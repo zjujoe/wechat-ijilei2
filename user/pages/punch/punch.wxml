@@ -1,0 +1,30 @@
+<view>
+  <form bindsubmit="punch_formSubmit" bindreset="punch_formReset">
+
+    <view class="useritem">
+      <label>词条集：</label>
+      <input class="section_input" type="text" name="name" value="{{bookname}}" disabled="true" />
+    </view>
+
+    <view class="useritem">
+      <label>词条数：</label>
+      <input class="section_input" type="text" name="name" value="{{itemnum}}" disabled="true" />
+    </view>
+
+    <view class="useritem">
+      <label class="picker-label">时间：</label>
+      <picker mode="multiSelector" value="{{timeIndex}}" range="{{time}}" bindchange='bindTimeChange'>
+        <view class='picker-content'>
+          <view>{{time[0][timeIndex[0]]}} 小时 {{time[1][timeIndex[1]]}} 分钟</view>
+          <view class="arrow" />
+        </view>
+      </picker>
+    </view>
+
+    <view class="row-item" bindtap='chooseLocation'>
+      <image class="row-item-icon" src='/images/location.png'></image>
+      <view>{{location}}</view>
+    </view>
+    <button class="btn" type="primary" formType="submit">打卡</button>
+  </form>
+</view>

@@ -1,0 +1,10 @@
+.punch-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  background: white
+}
+
+.punch-item {
+  margin: 10rpx;
+}

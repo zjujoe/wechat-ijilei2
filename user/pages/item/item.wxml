@@ -1,0 +1,64 @@
+<view class="useritem">
+  <label>词条集：</label>
+  <input class="section_input" type="text" name="name" value="{{items2[current].Bookname}}" disabled="true" placeholder="请输入" />
+</view>
+
+<view class="useritem ">
+  <label>词条名：</label>
+  <input class="section_input" type="text" name="name" value="{{items2[current].Name}} {{current+1}}/{{items2.length}}" disabled="ture" placeholder="请输入" />
+</view>
+<block wx:if="{{items2[current].filename2}}">
+  <image class="book__img" mode="aspectFit" src="{{items2[current].filename2}}" data-src="{{items2[current].filename2}}" bindtap="previewImage" />
+</block>
+<block wx:else>
+  <view class="useritem useritem2">
+    <label>解释</label>
+    <block wx:if="{{state>0}}">
+      <textarea class="section_input2" name="description" maxlength="200" disabled="true" value="{{items2[current].Description}}">
+      </textarea>
+    </block>
+    <block wx:else>
+      <textarea class="section_input2" name="description" maxlength="200" disabled="true" value="">
+      </textarea>
+    </block>
+  </view>
+</block>
+
+<view class="section">
+  <block wx:if="{{state==0}}">
+    <button type="primary" class="btn2" data-src="1" bindtap='onClick'>认 识</button>
+    <button type="primary" class="btn2" data-src="2" bindtap='onClick'>不认识</button>
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/trash.png" data-src="3" bindtap="onClick" />
+  </block>
+
+
+  <block wx:if="{{state>0}}">
+    <button type="primary" class="btn2" data-src="4" bindtap='onClick'>下一条</button>
+  <block wx:if="{{items2[current].infavorite}}">
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/favorites_remove.png" data-src="8" bindtap="onClick" />
+  </block>
+  <block wx:else>
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/favorites_add.png" data-src="7" bindtap="onClick" />
+  </block>
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/comments.png" data-src="5" bindtap="onClick" />
+    <block wx:if="{{state==2}}">
+      <label>今天不再安排学习</label>
+      <label class="section_input3" data-src="6" bindtap="onClick">撤销</label>
+    </block>
+    <view class="section">
+      <view class="uploader__bd">
+        <block wx:for="{{items2[current].filename}}" wx:for-item="image" wx:key="image">
+          <view class="uploader__file">
+            <image class="uploader__img" mode="aspectFit" src="{{image}}" data-src="{{image}}" bindtap="previewImage" />
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:for="{{comments}}" wx:key="item.Id">
+    <view class="useritem">
+      <text style="width:80%">{{index + 1}}  {{item.Detail}} </text>
+    </view>
+  </block>
+
+</view>

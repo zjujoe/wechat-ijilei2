@@ -1,0 +1,14 @@
+<form bindsubmit="formSubmit">
+  <view class="txt">
+    <view class="ima"></view>
+    <view class="txt2">姓名：</view>
+    <input placeholder="请输入姓名" maxlength="10" class="txt3" value="{{mem_name}}" bindchange="name" name="name2" />
+  </view>
+  <view class="txt">
+    <view class="ima"></view>
+    <view class="txt2">手机号码：</view>
+    <input type="idcard" placeholder="请输入手机号码" class="txt3" value="{{mem_phonenum}}" bindchange="phonenum" maxlength="18" name="phonenum2" />
+  </view>
+  <view style="clear:both"></view>
+  <button class="btn" form-type="submit" hover-class="none" disabled="{{disabled}}">提交</button>
+</form>

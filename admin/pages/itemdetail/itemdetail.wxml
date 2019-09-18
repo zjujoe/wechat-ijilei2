@@ -1,0 +1,67 @@
+<form bindsubmit="item_formSubmit" bindreset="item_formReset">
+
+  <view class="useritem">
+    <label>书名：</label>
+    <picker bindchange="pickerBooksChange" value="{{bookIndex}}" range="{{books2}}" range-key="{{'Name'}}">
+      <view class="picker section_input">
+        <text> {{books2[bookIndex].Name}} </text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="useritem ">
+    <label>词条名：</label>
+    <input class="section_input" type="text" name="name" value="{{item.Name}}" placeholder="请输入" />
+  </view>
+  <view class="useritem">
+    <checkbox-group bindchange="checkboxChange">
+      <checkbox value="explainbyphoto" checked="{{explainbyphoto}}" />
+      <label>以图片方式解释</label>
+    </checkbox-group>
+  </view>
+  <block wx:if="{{explainbyphoto}}">
+    <view class="section">
+      <view class="uploader__bd">
+        <block wx:if="{{itemphoto}}">
+          <image class="book__img" mode="aspectFit" src="{{itemphoto}}" data-src="{{itemphoto}}" bindtap="chooseImage_updateitem2" />
+        </block>
+        <block wx:else>
+          <view class="uploader__input-box">
+            <view class="uploader__input" bindtap="chooseImage_updateitem2"></view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="useritem useritem2">
+      <label>解释：</label>
+      <textarea class="section_input2" name="description" maxlength="4095" value="{{item.Description}}" placeholder="最多可输入 4095 个字符, 3 张图片">
+      </textarea>
+    </view>
+  </block>
+  <view class="section">
+    <view class="uploader__bd">
+      <view class="uploader__files">
+        <block wx:for="{{imageList2}}" wx:for-item="image" wx:key="image">
+          <view class="uploader__file">
+            <image class="uploader__img" mode="aspectFit" src="{{image}}" data-src="{{index}}" bindtap="removeImage_updateitem" />
+          </view>
+        </block>
+      </view>
+      <view class="uploader__input-box">
+        <view class="uploader__input" bindtap="chooseImage_updateitem"></view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="section_pic">
+    <view style="flex:1" />
+    <button type="primary" size="mini" formType="submit">更新</button>
+  </view>
+  <view class="section_pic">
+    <view style="flex:1" />
+    <button type="warn" size="mini" formType="reset">删除</button>
+  </view>
+</form>

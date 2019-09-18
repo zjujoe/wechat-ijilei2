@@ -1,0 +1,30 @@
+<form bindsubmit="item_formSubmit">
+
+  <view class="useritem ">
+    <label>书名：</label>
+    <input class="section_input" type="text" name="name" value="{{item.Name}}" disabled="true" />
+  </view>
+  <view class="useritem ">
+    <label>词条名：</label>
+    <input class="section_input" type="text" name="name" value="{{item.Bookname}}" disabled="true" />
+  </view>
+
+  <view class="useritem">
+    <label>类型：</label>
+    <picker bindchange="pickerCommentType" value="{{currentTypeIndex}}" range="{{types}}">
+      <view class="picker section_input">{{types[currentTypeIndex]}}</view>
+    </picker>
+  </view>
+
+  <view class="useritem useritem2">
+    <label>笔记：</label>
+    <textarea class="section_input2" name="comments" maxlength="4095" value="" placeholder="最多可输入 4095 个字符, 3 张图片">
+    </textarea>
+  </view>
+
+  <view class="section_pic">
+    <view style="flex:1" />
+    <button type="primary" size="mini" formType="submit">提交</button>
+  </view>
+
+</form>

@@ -1,0 +1,43 @@
+<view class="useritem">
+  <label>书名：</label>
+  <view class="picker section_input">
+    <text> {{books2[bookIndex].Name}} </text>
+  </view>
+</view>
+
+<view class="useritem ">
+  <label>词条名：</label>
+  <input class="section_input" type="text" name="name" value="{{item.Name}}" disabled="true" placeholder="请输入" />
+</view>
+<block wx:if="{{item.filename2}}">
+  <image class="book__img useritem2" mode="aspectFit" src="{{item.filename2}}" data-src="{{item.filename2}}" bindtap="previewImage" />
+</block>
+<block wx:else>
+  <view class="useritem useritem2">
+    <label>解释：</label>
+    <textarea class="section_input2" name="description" maxlength="4095" value="{{item.Description}}" disabled="true" placeholder="最多可输入 4095 个字符, 3 张图片">
+    </textarea>
+  </view>
+</block>
+<view class="section">
+  <view class="uploader__bd">
+    <view class="uploader__files">
+      <block wx:for="{{item.filename}}" wx:for-item="image" wx:key="image">
+        <view class="uploader__file">
+          <image class="uploader__img" mode="aspectFit" src="{{image}}" data-src="{{image}}" bindtap="previewImage" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <block wx:if="{{item.infavorite}}">
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/favorites_remove.png" data-src="3" bindtap="removeFavorite" />
+  </block>
+  <block wx:else>
+    <image class="icon__img icon__img2" mode="aspectFit" src="/images/favorites_add.png" data-src="3" bindtap="addFavorite" />
+  </block>
+  <block wx:for="{{comments}}" wx:key="item.Id">
+    <view class="useritem">
+      <text>{{index + 1}}  {{item.Detail}} </text>
+    </view>
+  </block>
+</view>

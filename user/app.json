@@ -1,0 +1,53 @@
+{
+  "resizable": true,
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/item/item",
+    "pages/itemlist/itemlist",
+    "pages/browse/browse",
+    "pages/punch/punch",
+    "pages/punchlist/punchlist",
+    "pages/itemdetail/itemdetail",
+    "pages/itemcomments/itemcomments",
+    "pages/settings/settings"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于提供打卡信息"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1f1f27",
+    "navigationBarTitleText": "WeChataaa2",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a1a6af",
+    "backgroundColor": "#1f1f27",
+    "selectedColor": "#52d254",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/images/lessonhl.png",
+        "iconPath": "images/lesson.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/images/browsehl.png",
+        "iconPath": "images/browse.png",
+        "pagePath": "pages/browse/browse",
+        "text": "浏览"
+      },
+      {
+        "selectedIconPath": "/images/settingshl.png",
+        "iconPath": "images/settings.png",
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

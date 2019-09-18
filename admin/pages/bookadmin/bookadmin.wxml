@@ -1,0 +1,62 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">新加书目</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">浏览书目</view>
+</view>
+
+<swiper current="{{currentTab}}" style="height:100%;" duration="300" bindchange="swiperTab">
+
+  <swiper-item>
+    <scroll-view scroll-y="true">
+      <form bindsubmit="booknew_formSubmit" bindreset="booknew_formReset">
+
+        <view class="useritem ">
+          <label>书名:</label>
+          <input class="section_input" type="text" name="name" placeholder="请输入" />
+        </view>
+        <view class="useritem useritem2">
+          <label>描述:</label>
+          <textarea class="section_input2" name="description" maxlength="200" placeholder="最多可输入 4095 个字符">
+          </textarea>
+        </view>
+
+        <view class="section">
+          <view class="uploader__bd">
+            <block wx:if="{{bookphoto_new}}">
+              <view class="uploader__files">
+                <view class="uploader__file">
+                  <image class="uploader__img" mode="aspectFit" src="{{bookphoto_new}}" data-src="{{bookphoto_new}}" bindtap="previewImage" />
+                </view>
+              </view>
+            </block>
+            <view class="uploader__input-box">
+              <view class="uploader__input" bindtap="chooseImage_newbook"></view>
+            </view>
+          </view>
+          <view class="section_pic">
+            <view style="flex:1" />
+            <button type="primary" size="mini" formType="submit">添加</button>
+          </view>
+        </view>
+
+      </form>
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view scroll-y="true">
+      <form bindsubmit="booknew_formSubmit" bindreset="booknew_formReset">
+
+        <view class="container">
+          <block wx:for="{{books2}}" wx:key="item.Id">
+            <view class="books">
+              <image class="books__logo" mode="aspectFit" src="{{item.filename}}" bindtap='clickBook' data-bid='{{item.Id}}' />
+              <view class="books_details">
+                <text class="section_name">{{item.Name}}（{{item.Items}}）</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </form>
+    </scroll-view>
+  </swiper-item>
+</swiper>

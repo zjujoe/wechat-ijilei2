@@ -1,0 +1,5 @@
+<view class="punch-list">
+  <block wx:for="{{punches}}" wx:for-item="punch" wx:key="Id">
+    <text class="punch-item">{{index + 1}}. {{punch.Time}} {{punch.Book}} {{punch.Num}}</text>
+  </block>
+</view>

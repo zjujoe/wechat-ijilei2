@@ -1,0 +1,52 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">浏览</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">收藏</view>
+</view>
+
+<swiper current="{{currentTab}}" style="height:100%;" duration="300" bindchange="swiperTab">
+
+  <swiper-item>
+    <scroll-view scroll-y="true">
+
+      <form bindsubmit="itemsearch_formSubmit">
+        <view class="useritem">
+          <label>书名：</label>
+          <picker bindchange="pickerBooksChange2" value="{{booksIndex_search}}" range="{{books2}}" range-key="{{'Name'}}">
+            <view class="picker section_input">
+              <text> {{books2[booksIndex_search]["Name"]}} </text>
+            </view>
+          </picker>
+        </view>
+
+        <view class="useritem">
+          <label>词条名：</label>
+          <input class="section_input" type="text" name="search" placeholder="请输入" />
+          <button size="mini" formType="submit">查询</button>
+        </view>
+      </form>
+
+      <block wx:for="{{itemsb}}" wx:key="item.Id">
+        <view class="useritem">
+          <text data-mode='1' data-iid='{{item.Id}}' bindtap='clickItem'>{{index + 1}}  {{item.Name}}    {{item.Bookname}}</text>
+        </view>
+      </block>
+
+    </scroll-view>
+  </swiper-item>
+
+  <swiper-item>
+    <scroll-view class='scrollview' scroll-y="true">
+      <block wx:for="{{itemsf}}" wx:key="item.Id">
+        <view class="useritem">
+          <text data-mode='2' data-iid='{{item.Id}}' bindtap='clickItem'>{{index + 1}}  {{item.Name}}    {{item.Bookname}}</text>
+          <!--<button type="warn" size="mini" bindtap='removeRecital' data-index='{{index}}'>忘记</button>-->
+        </view>
+      </block>
+      <block wx:if="{{itemsf.length==0}}">
+        <view class="useritem">
+	暂时没有收藏
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>

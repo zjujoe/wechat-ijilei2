@@ -1,0 +1,51 @@
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+}
+
+.image {
+  width: 720rpx;
+  height: 405rpx;
+  border: 2rpx solid #fff;
+  border-radius: 10rpx;
+  box-shadow: 6rpx 6rpx 2rpx 2rpx #ccc;
+}
+
+.detail {
+  color: black;
+  font-size: 28rpx;
+  padding-left: 20rpx;
+}
+
+.image2 {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+.picker-content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.picker-label {
+  width: 105px;
+}
+
+picker {
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+<scroll-view class='scrollview' scroll-y="true">
+  <block wx:for="{{items2}}" wx:key="item.Id">
+    <view class="useritem">
+      <text style="width:85%" data-iid='{{item.Id}}' bindtap='clickItem'>{{index + 1}}  {{item.Name}}    {{item.Bookname}}</text>
+      <button type="warn" size="mini" bindtap='removeRecital' data-index='{{index}}'>忘记</button>
+    </view>
+  </block>
+</scroll-view>

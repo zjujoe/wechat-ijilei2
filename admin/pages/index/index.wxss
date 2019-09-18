@@ -1,0 +1,41 @@
+/**index.wxss**/
+scroll-view {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.tr {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: left;
+  align-items: left;
+  margin: 10rpx;
+}
+
+.tr:nth-child(odd) {
+  background: #e6f3f9;
+}
+
+.form_query {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: 20rpx;
+}
+
